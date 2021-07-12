@@ -1,0 +1,34 @@
+#!/usr/bin/env python3
+
+
+def pageCount(n,p):
+    last = abs((n-1)%2-2)
+    sl = n-last
+    book=[]
+    book.append((0,1))
+    book+=[(i+1,i+2) for i in range(1,sl,2)]
+    if last==1:
+        book.append((n,0))
+    else:
+        book.append((n-1,n))
+    #return book
+    print(book)
+    fturn, bturn = 0, 0
+    for i in range(len(book)):
+        if p in book[i]:
+            break
+        else:
+            fturn+=1
+
+    for i in range(len(book)-1, -1, -1):
+        if p in book[i]:
+            break
+        else:
+            bturn+=1
+    print("forward turns: {}, backward turns: {}".format(fturn, bturn))
+    return min(fturn, bturn)
+
+if __name__=='__main__':
+    n = int(input("Enter count of total pages in book: "))
+    p = int(input("Enter page number where you want to turn to: "))
+    print(pageCount(n, p))
