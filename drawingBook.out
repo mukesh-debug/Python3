@@ -1,0 +1,45 @@
+# callgrind format
+version: 1
+creator: pprofile
+event: usphit :microseconds/hit
+events: hits microseconds usphit
+cmd: drawingBook.py 118 72
+fl=drawingBook.py
+fn=<module>:2
+2 2 27 13
+5 1 4 4
+32 1 3 3
+33 1 4 4
+34 1 3 3
+35 1 19 19
+cfl=drawingBook.py
+cfn=pageCount:5
+calls=1 5
+35 1 664 664
+fn=pageCount:5
+5 1 3 3
+6 1 4 4
+7 1 3 3
+8 1 3 3
+9 1 3 3
+10 1 12 12
+cfl=drawingBook.py
+cfn=<listcomp>:10
+calls=1 10
+10 1 124 124
+11 1 3 3
+12 1 4 4
+16 1 39 39
+17 1 5 5
+18 37 82 2
+19 37 90 2
+20 1 2 2
+22 36 86 2
+24 24 56 2
+25 24 57 2
+26 1 2 2
+28 23 52 2
+29 1 10 10
+30 1 15 15
+fn=<listcomp>:10
+10 60 124 2
