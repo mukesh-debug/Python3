@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+import sys
 
 
 def pageCount(n,p):
@@ -29,6 +30,6 @@ def pageCount(n,p):
     return min(fturn, bturn)
 
 if __name__=='__main__':
-    n = int(input("Enter count of total pages in book: "))
-    p = int(input("Enter page number where you want to turn to: "))
+    n = int(sys.argv[1]) #int(input("Enter count of total pages in book: "))
+    p = int(sys.argv[2]) #int(input("Enter page number where you want to turn to: "))
     print(pageCount(n, p))
