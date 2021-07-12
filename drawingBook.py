@@ -3,6 +3,10 @@ import sys
 
 
 def pageCount(n,p):
+    """
+    This function is very easy to understand implementation to know minimum how
+    many pages to turn either from forward or backward of the book to arrive at a specific page
+    """
     last = abs((n-1)%2-2)
     sl = n-last
     book=[]
@@ -13,20 +17,22 @@ def pageCount(n,p):
     else:
         book.append((n-1,n))
     #return book
-    print(book)
+    #print(book)
     fturn, bturn = 0, 0
+    # turning pages forward
     for i in range(len(book)):
         if p in book[i]:
             break
         else:
             fturn+=1
 
+    #turning pages backward
     for i in range(len(book)-1, -1, -1):
         if p in book[i]:
             break
         else:
             bturn+=1
-    print("forward turns: {}, backward turns: {}".format(fturn, bturn))
+    #print("forward turns: {}, backward turns: {}".format(fturn, bturn))
     return min(fturn, bturn)
 
 if __name__=='__main__':
