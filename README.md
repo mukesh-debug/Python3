@@ -1,5 +1,5 @@
 # Python3
-This Repository will be used for storing python3 scripts and their tests(Not for all python3 scripts).
+This Repository will be used for storing python3 scripts and their tests(Though Not for all python3 scripts).
 
 # shebang line
 Script files are created for use on linux systems and thus the shebang line '#!/usr/bin/env python3'.
