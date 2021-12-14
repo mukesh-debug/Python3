@@ -5,16 +5,17 @@ import socket  # Socket library for data retrieval
 my_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 # created socket to establish connection through
 
-my_socket.connect(('data.pr4e.org', 80)) # To make connection through the socket
-http_protocol = 'GET http://data.pr4e.org/romeo.txt HTTP/1.0\n\n'.encode()
-# method url protocol<eol><newline>
-# data needs to be encoded from unicode to utf-8 to send over the socket
+# Take input of webserver and url from user
 
-my_socket.send(http_protocol)  # Send the command to webserver
+
+my_socket.connect(('data.pr4e.org', 80)) # To make connection through the socket
+# data needs to be encoded from unicode to utf-8 to send over the socket
+command = 'GET http://data.pr4e.org/intro-short.txt HTTP/1.0\r\n\r\n'.encode()
+my_socket.send(command)  # Send the command to webserver
 
 # To receive the data from the webserver
 count = 1 
-packet_size = 100
+packet_size = 512
 while True:
     data = my_socket.recv(packet_size)  # To receive 200 bytes of data in one go
     if not data:
